@@ -2,32 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../components/Header';
+import GridItem from '../components/GridItem';
 import SearchBar from '../containers/SearchBar';
 import SearchPaginate from '../containers/SearchPaginate';
 
 class Search extends Component {
 
   renderSearch() {
-    return this.props.search.map( (search) => {
+    return this.props.search.map( (search, index) => {
       return (
-        <tr key={search.id}>
-          <td>
-            <div className="profile">
-              <img src={search.user.avatar_url}/>
-              <p>{search.user_name}</p>
-            </div>
-          </td>
-          <td>
-            <p><strong>Name: </strong>{search.name == '' ? 'null' : `${search.name}`}</p>
-            <p><strong>Description: </strong>{search.description == '' ? 'null' : `${search.description}`}</p>
-            <a href={search.url} target="_blank">Claim link</a>
-          </td>
-          <td>
-            <div className="link">
-              <img src={search.thumbUrl} />
-            </div>
-          </td>
-        </tr>
+        <div clasName="col-xs-12 col-md-4" key={index}>
+          <GridItem info={search}/>
+        </div>
       );
     });
   }
@@ -36,19 +22,12 @@ class Search extends Component {
     return (
       <div>
         <Header />
-        <SearchBar/>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Claim</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="container">
+          <SearchBar />
+          <div className="row">
             {this.renderSearch()}
-          </tbody>
-        </table>
+          </div>
+        </div>
         <SearchPaginate />
       </div>
     );

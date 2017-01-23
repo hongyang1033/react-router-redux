@@ -1,4 +1,4 @@
-import React, { Component } from 'React';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -30,12 +30,12 @@ class SearchPaginate extends Component {
 
   render() {
     return (
-      <nav aria-label="..." className={(this.props.search.length == 0 ? 'display-none' : '')}>
+      <nav aria-label="..." className={"paginate" + (this.props.search.length == 0 ? 'display-none' : '')}>
         <ul className="pagination pagination-lg">
           <li onClick={this.onClickPrev} className={"page-item " + (this.state.page == 1 ? 'display-none' : '')}>
             <a className="page-link" href="#">Previous</a>
           </li>
-          <li className={"page-item " + (this.props.search.length < 10 ? 'display-none' : '')} onClick={this.onClickNext}>
+          <li className={"page-item " + (this.props.search.length < 9 ? 'display-none' : '')} onClick={this.onClickNext}>
             <a className="page-link" href="#">Next</a>
           </li>
         </ul>

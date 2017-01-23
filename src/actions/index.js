@@ -11,7 +11,7 @@ export const FETCH_SEARCH_FAILED = 'FETCH_SEARCH_FAILED';
 export const UPDATE_SEARCH = 'UPDATE_SEARCH';
 
 export function fetchData(index=1) {
-  const url = `${ROOT_URL}&page=${index}&limit=10`;
+  const url = `${ROOT_URL}&page=${index}&limit=9`;
 
   return function(dispatch){
     axios.get(url)
@@ -25,7 +25,7 @@ export function fetchData(index=1) {
 }
 
 export function fetchSearch(term, index=1) {
-  const url = `${ROOT_URL}&page=${index}&limit=10&search=${term}`;
+  const url = `${ROOT_URL}&page=${index}&limit=9&search=${term}`;
 
     return function(dispatch){
       axios.get(url)
