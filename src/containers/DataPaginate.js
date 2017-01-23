@@ -16,8 +16,8 @@ class DataPaginate extends Component {
 
   onClickNext(event) {
     event.preventDefault();
-    this.props.fetchData(this.state.page + 1)
-    this.setState({ page: this.state.page + 1 })
+    this.props.fetchData(this.state.page + 1);
+    this.setState({ page: this.state.page + 1 });
     window.scrollTo(0,0);
   }
 
