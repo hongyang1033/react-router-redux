@@ -15,7 +15,7 @@ const GridItem = ({ info }) => (
     </div>
     <div className="foot">
       <div className="claim">
-        <strong>Claim link: </strong><a href={info.certificateUrls.pdf}>&#x1f517;</a>
+        <strong>Claim link: </strong><a href={info.certificateUrls.pdf} target="_blank">&#x1f517;</a>
         <p><strong>Name: </strong>{info.name == '' ? 'null' : `${info.name}`}</p>
         <p><strong>Description: </strong>{info.description == '' ? 'null' : `${info.description}`}</p>
       </div>
