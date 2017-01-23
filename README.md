@@ -1,4 +1,6 @@
-Local Server:
+##Live Demo
+https://blockai-challenge-v2.herokuapp.com
 
-1) npm install
+##Local Server
+1) npm install__
 2) npm run dev
