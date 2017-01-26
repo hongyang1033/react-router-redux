@@ -31,8 +31,8 @@ class Data extends Component {
           <div className="row">
             {this.renderData()}
           </div>
+          <DataPaginate />
         </div>
-        <DataPaginate />
       </div>
     );
   }

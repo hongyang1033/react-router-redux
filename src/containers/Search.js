@@ -27,8 +27,8 @@ class Search extends Component {
           <div className="row">
             {this.renderSearch()}
           </div>
+          <SearchPaginate />
         </div>
-        <SearchPaginate />
       </div>
     );
   }
