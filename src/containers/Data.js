@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchData } from '../actions/index';
+import { fetchData, clearData } from '../actions/index';
 
 import Header from '../components/Header';
 import GridItem from '../components/GridItem';
@@ -11,6 +11,10 @@ import DataPaginate from '../containers/DataPaginate';
 class Data extends Component {
   componentWillMount() {
     this.props.fetchData();
+  }
+
+  componentWillUnmount() {
+    this.props.clearData();
   }
 
   renderData() {
@@ -43,7 +47,7 @@ function mapStateToProps({ data }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchData }, dispatch);
+  return bindActionCreators({ fetchData, clearData }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Data);

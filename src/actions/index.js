@@ -4,9 +4,11 @@ const ROOT_URL = 'https://api.blockai.com/v1/registrations/challenge?include=use
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const FETCH_DATA_FAILED = 'FETCH_DATA_FAILED';
+export const CLEAR_DATA = 'CLEAR_DATA';
 
 export const FETCH_SEARCH = 'FETCH_SEARCH';
 export const FETCH_SEARCH_FAILED = 'FETCH_SEARCH_FAILED';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const UPDATE_SEARCH = 'UPDATE_SEARCH';
 
@@ -42,5 +44,19 @@ export function updateSearch(term) {
   return {
     type: UPDATE_SEARCH,
     payload: term
+  }
+}
+
+export function clearData() {
+  return {
+    type: CLEAR_DATA,
+    payload: []
+  }
+}
+
+export function clearSearch() {
+  return {
+    type: CLEAR_SEARCH,
+    payload: []
   }
 }

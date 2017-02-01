@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { clearSearch, updateSearch } from '../actions/index';
 
 import Header from '../components/Header';
 import GridItem from '../components/GridItem';
@@ -7,6 +10,10 @@ import SearchBar from '../containers/SearchBar';
 import SearchPaginate from '../containers/SearchPaginate';
 
 class Search extends Component {
+  componentWillUnmount() {
+    this.props.clearSearch();
+    this.props.updateSearch('');
+  }
 
   renderSearch() {
     return this.props.search.map( (search, index) => {
@@ -22,8 +29,8 @@ class Search extends Component {
     return (
       <div>
         <Header />
-        <SearchBar />
         <div className="container">
+          <SearchBar />
           <div className="row">
             {this.renderSearch()}
           </div>
@@ -38,4 +45,8 @@ function mapStateToProps({ search }) {
   return { search };
 }
 
-export default connect(mapStateToProps)(Search);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ clearSearch, updateSearch }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

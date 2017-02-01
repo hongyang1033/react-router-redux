@@ -15,15 +15,24 @@ form a {
   display: none;
 }
 
+.profile > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .profile__image {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 15px;
 }
 
 .profile__name {
-  margin-left: 20px;
+  margin-left: 5px;
   display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  vertical-align: middle;
 }
 
 .card {
@@ -42,8 +51,12 @@ form a {
   width: 100%;
 }
 
-.metadata > p {
+.metadata p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.metadata a {
+  text-decoration: none;
 }
