@@ -16,7 +16,7 @@ class Data extends Component {
   renderData() {
     return this.props.data.map( (data, index) => {
       return (
-        <div clasName="col-xs-12 col-md-4" key={index}>
+        <div className="col-md-4" key={index}>
           <GridItem info={data}/>
         </div>
       );
