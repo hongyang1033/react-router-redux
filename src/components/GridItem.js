@@ -11,7 +11,7 @@ const GridItem = ({ info }) => (
       </div>
     </div>
     <div className="card__content">
-      <img src={info.content_type_primary == 'image' ? `${info.thumbUrl}` : 'https://a.dilcdn.com/bl/wp-content/uploads/sites/8/2014/03/image5.jpg'} alt={info.name} alt="content" className="card__content__image img-fluid" />
+      <img src={info.content_type_primary == 'image' ? `${info.thumbUrl}` : 'https://a.dilcdn.com/bl/wp-content/uploads/sites/8/2014/03/image5.jpg'} alt={info.name} alt="content" className="card__content__image" />
     </div>
     <div className="card__footer">
       <div className="metadata">

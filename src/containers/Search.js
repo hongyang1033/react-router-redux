@@ -11,7 +11,7 @@ class Search extends Component {
   renderSearch() {
     return this.props.search.map( (search, index) => {
       return (
-        <div clasName="col-xs-12 col-md-4" key={index}>
+        <div className="col-md-4" key={index}>
           <GridItem info={search}/>
         </div>
       );
@@ -22,8 +22,8 @@ class Search extends Component {
     return (
       <div>
         <Header />
+        <SearchBar />
         <div className="container">
-          <SearchBar />
           <div className="row">
             {this.renderSearch()}
           </div>
@@ -34,7 +34,7 @@ class Search extends Component {
   }
 }
 
-function mapStateToProps({ search, term }) {
+function mapStateToProps({ search }) {
   return { search };
 }
 
